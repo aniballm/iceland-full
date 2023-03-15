@@ -48,7 +48,7 @@ class Translations extends Translation
 
         if ( $translations && count( $translations ) > 0 ) {
             foreach ( $translations as $translation ) {
-                $translationsList[ $translation[ 'full_key' ] ] = new Translation( $translation[ 'full_key' ], $translation[ 'text' ] );
+                $translationsList[ $translation[ 'full_key' ] ] = new self( $translation[ 'full_key' ], $translation[ 'text' ] );
             }
         }
 
@@ -68,7 +68,7 @@ class Translations extends Translation
         $translation = $response->json( 'data' );
 
         if ( $translation ) {
-            $translation = new Translation( $translation[ 'full_key' ], $translation[ 'text' ] );
+            $translation = new self( $translation[ 'full_key' ], $translation[ 'text' ] );
         }
 
         return $translation;
@@ -99,13 +99,13 @@ class Translations extends Translation
                     }
 
                     if ( $found ) {
-                        $translationsList[] = new Translation( $translation[ 'full_key' ], $translation[ 'text' ] );
+                        $translationsList[] = new self( $translation[ 'full_key' ], $translation[ 'text' ] );
                     }
                 }
             }
         } else { // No obtenemos ninguna cadena de texto o la que recibimos está vacía
             foreach ( $translations as $translation ) {
-                $translationsList[] = new Translation( $translation[ 'full_key' ], $translation[ 'text' ] );
+                $translationsList[] = new self( $translation[ 'full_key' ], $translation[ 'text' ] );
             }
         }
 
