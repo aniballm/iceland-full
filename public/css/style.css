@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap);
+html {
+  background-color: #F5F6FA;
+}
+
+body {
+  padding-top: 58px;
+  padding-bottom: 52px;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+tbody tr:nth-child(odd), tbody tr.impar {
+  background-color: #fff;
+}
+tbody tr:nth-child(even), tbody tr.par {
+  background-color: #FBFBFB;
+}
+
+td {
+  border: none;
+  padding: 16px;
+}
+
+.btn-excel {
+  width: 93px;
+  height: 28px;
+  background-color: #9013FE;
+  font-size: 13px;
+  font-size: 0.8125em;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.21;
+}
+
+.btn-dropdown {
+  width: 157px;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  font-size: 14px;
+  font-size: 0.875em;
+  color: #C0C0C0;
+  line-height: 1.21;
+}
+.btn-dropdown.show {
+  background-color: #fff;
+  font-size: 14px;
+  font-size: 0.875em;
+  color: #C0C0C0;
+  line-height: 1.21;
+}
+
+.dropdown-toggle::after {
+  content: "\f063";
+  font-family: "Fontawesome";
+  border: 0;
+}
+.dropdown-toggle.show::after {
+  content: "\f062";
+  font-family: "Fontawesome";
+  border: 0;
+}
+
+.dropdown-menu {
+  font-size: 14px;
+  font-size: 0.875em;
+  line-height: 1.21;
+}
+
+input.search {
+  background: url(/images/search.svg?14a43e54ceb0fbe558a3a820cbfdd007) 16px center no-repeat #fff;
+  padding-left: 42px;
+}
+input.search::-moz-placeholder {
+  color: #C0C0C0;
+}
+input.search, input.search::placeholder {
+  color: #C0C0C0;
+}
+
+.form-control {
+  border: none;
+  height: 35px;
+  width: 342px;
+  font-size: 14px;
+  font-size: 0.875em;
+}
+
+.actions {
+  margin-bottom: 21px;
+}
+.actions .filter {
+  gap: 20px;
+}
+.content thead {
+  background-color: #F0F1F1;
+}
+.content th {
+  width: 14.2857142857%;
+  border: none;
+  padding: 16px;
+  font-size: 13px;
+  font-size: 0.8125em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.content tbody tr td {
+  padding: 16px;
+  border: none;
+  font-size: 14px;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.6071428571;
+}
+.content tbody tr td.full-key {
+  color: #9013FE;
+  font-weight: 500;
+  cursor: pointer;
+}
+.content tbody tr td .highlight {
+  background-color: #FFEE54;
+}
+
+.modal-header {
+  border: none;
+}
+.modal-header .btn-close {
+  margin: 0;
+  padding-top: 14px;
+  padding-right: 14px;
+}
+.modal-title {
+  padding-top: 24px;
+  padding-left: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #9013FE;
+}
+.modal-body {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
+.modal td {
+  padding: 16px;
+  width: 50%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #24272A;
+}

@@ -1,0 +1,41 @@
+$main-class: '.modal';
+
+#{$main-class} {
+    &-header {
+        border: none;
+
+        .btn-close {
+            margin: 0;
+            padding: {
+                top: 14px;
+                right: 14px;
+            };
+        }
+    }
+
+    &-title {
+        padding: {
+            top: 24px;
+            left: 24px;
+        };
+        font-size: 18px;
+        font-weight: 500;
+        color: $color-purple;
+    }
+
+    &-body {
+        padding: {
+            left: 40px;
+            right: 40px;
+            bottom: 40px;
+        };
+    }
+
+    td {
+        padding: 16px;
+        width: 50%;
+        font-size: 15px;
+        font-weight: 500;
+        color: #24272A;
+    }
+}

@@ -1,0 +1,31 @@
+html {
+    background-color: $color-light_gray;
+}
+
+body {
+    padding-top: 58px;
+    padding-bottom: 52px;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+tbody {
+    tr {
+        &:nth-child(odd),
+        &.impar {
+            background-color: $color-white;
+        }
+
+        &:nth-child(even),
+        &.par {
+            background-color: #FBFBFB;
+        }
+    }
+}
+
+td {
+    border: none;
+    padding: 16px;
+}

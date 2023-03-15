@@ -1,0 +1,37 @@
+.content {
+    thead {
+        background-color: $color-gray;
+    }
+
+    th {
+        width: (100 / 7) * 1%;
+        border: none;
+        padding: 16px;
+        @include font-size(13);
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: (18.2 / 13);
+    }
+
+    tbody {
+        tr {
+            td {
+                padding: 16px;
+                border: none;
+                @include font-size(14);
+                font-weight: 400;
+                line-height: (22.5 / 14);
+
+                &.full-key {
+                    color: $color-purple;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+
+                .highlight {
+                    background-color: $color-yellow;
+                }
+            }
+        }
+    }
+}

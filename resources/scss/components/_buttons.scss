@@ -1,0 +1,49 @@
+.btn-excel {
+    width: 93px;
+    height: 28px;
+    background-color: $color-purple;
+    @include font-size(13);
+    color: $color-white;
+    text-transform: uppercase;
+    line-height: (15.73 / 13);
+}
+
+.btn-dropdown {
+    width: 157px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-white;
+    @include font-size(14);
+    color: $color-text_gray;
+    line-height: (16.94 / 14);
+
+    &.show {
+        background-color: $color-white;
+        @include font-size(14);
+        color: $color-text_gray;
+        line-height: (16.94 / 14);
+    }
+}
+
+.dropdown-toggle {
+    &::after {
+        content: '\f063';
+        font-family: 'Fontawesome';
+        border: 0;
+    }
+
+    &.show {
+        &::after {
+            content: '\f062';
+            font-family: 'Fontawesome';
+            border: 0;
+        }
+    }
+}
+
+.dropdown-menu {
+    @include font-size(14);
+    line-height: (16.94 / 14);
+}
