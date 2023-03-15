@@ -5,7 +5,7 @@ namespace App\Http\Classes;
 use App\Http\Classes\Translation;
 use Illuminate\Support\Facades\Http;
 
-class Translations
+class Translations extends Translation
 {
     /* Contantes para realizar la conexión a la API */
     const USER  = 'candidate';
