@@ -6,25 +6,53 @@
     @foreach( $texts as $text )
         <tr>
             <td class="full-key" data-key="{{ $text->getFullKey() }}">
-                {{ $text->getFullKey() }}
+                @isset( $search )
+                    {!! str_replace( $search, '<span class="highlight">' . $search . '</span>', $text->getFullKey() ) !!}
+                @else
+                    {!! $text->getFullKey() !!}
+                @endisset
             </td>
             <td>
-                {!! $text->getText( 'en' ) !!}
+                @isset( $search )
+                    {!! str_replace( $search, '<span class="highlight">' . $search . '</span>', $text->getText( 'en' ) ) !!}
+                @else
+                     {!! $text->getText( 'en' ) !!}
+                @endisset
             </td>
             <td>
-                {!! $text->getText( 'es' ) !!}
+                @isset( $search )
+                    {!! str_replace( $search, '<span class="highlight">' . $search . '</span>', $text->getText( 'es' ) ) !!}
+                @else
+                    {!! $text->getText( 'es' ) !!}
+                @endisset
             </td>
             <td>
-                {!! $text->getText( 'de' ) !!}
+                @isset( $search )
+                    {!! str_replace( $search, '<span class="highlight">' . $search . '</span>', $text->getText( 'de' ) ) !!}
+                @else
+                    {!! $text->getText( 'de' ) !!}
+                @endisset
             </td>
             <td>
-                {!! $text->getText( 'fr' ) !!}
+                @isset( $search )
+                    {!! str_replace( $search, '<span class="highlight">' . $search . '</span>', $text->getText( 'fr' ) ) !!}
+                @else
+                    {!! $text->getText( 'fr' ) !!}
+                @endisset
             </td>
             <td>
-                {!! $text->getText( 'it' ) !!}
+                @isset( $search )
+                    {!! str_replace( $search, '<span class="highlight">' . $search . '</span>', $text->getText( 'it' ) ) !!}
+                @else
+                    {!! $text->getText( 'it' ) !!}
+                @endisset
             </td>
             <td>
-                {!! $text->getText( 'da' ) !!}
+                @isset( $search )
+                    {!! str_replace( $search, '<span class="highlight">' . $search . '</span>', $text->getText( 'da' ) ) !!}
+                @else
+                    {!! $text->getText( 'da' ) !!}
+                @endisset
             </td>
         </tr>
     @endforeach

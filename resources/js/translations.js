@@ -26,59 +26,21 @@ searchInput.addEventListener('input', (e) => {
     let excel = document.querySelector('.btn-excel');
     excel.href = exportUrl
 
-    if (ft && gr) {
-        params = {
-            group: gr,
-            findText: ft
-        }
+    let params = ''
 
+    if (ft) {
+        params += '?findText=' + ft
         excel.href = exportUrl + '?findText=' + ft
-    } else if (gr) {
-        params = {
-            group: gr
-        }
-    } else if (ft) {
-        params = {
-            findText: ft
-        }
-
-        excel.href = exportUrl + '?findText=' + ft
-    } else {
-        params = {}
     }
 
-    $.ajax({
-        url: baseUrl + '/ajax/search',
-        method: 'GET',
-        data: params,
-        success: function ( data ) {
-            let html = '';
+    if (gr) {
+        params += ( '' == params ) ? '?group=' + gr : '&group=' + gr
+    }
 
-            if (data.length > 0) {
-                let i = 1
-
-                data.forEach(e => {
-                    let par = ( i % 2 != 0 ) ? 'impar' : 'par'
-
-                    html += '<tr class="' + par + '">';
-                    html += '<td class="full-key" data-key="' + e['full_key'] + '">' + e['full_key'].toString().replace(ft,'<span class="highlight">' + ft + '</span>') + '</td>'
-                    html += '<td>' + e['en'].toString().replace(ft,'<span class="highlight">' + ft + '</span>') + '</td>'
-                    html += '<td>' + e['es'].toString().replace(ft,'<span class="highlight">' + ft + '</span>') + '</td>'
-                    html += '<td>' + e['de'].toString().replace(ft,'<span class="highlight">' + ft + '</span>') + '</td>'
-                    html += '<td>' + e['fr'].toString().replace(ft,'<span class="highlight">' + ft + '</span>') + '</td>'
-                    html += '<td>' + e['it'].toString().replace(ft,'<span class="highlight">' + ft + '</span>') + '</td>'
-                    html += '<td>' + e['da'].toString().replace(ft,'<span class="highlight">' + ft + '</span>') + '</td>'
-                    html += '<tr>';
-
-                    i++
-                })
-            } else {
-                html += '<tr><td colspan="7" class="text-center">No existen traducciones que coincidan con la búsqueda</td></tr>'
-            }
-
-            $('#table-content').html(html)
-
+    fetch( baseUrl + '/ajax/search' + params )
+        .then(res => res.text())
+        .then(html => {
+            document.querySelector('#table-content').innerHTML = html
             clickOnKey()
-        }
-    })
+        })
 })
