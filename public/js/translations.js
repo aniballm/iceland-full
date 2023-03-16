@@ -7,22 +7,11 @@ function clickOnKey() {
   document.querySelectorAll('.full-key').forEach(function (e) {
     e.addEventListener('click', function () {
       var key = e.getAttribute('data-key');
-      $.ajax({
-        url: baseUrl + '/ajax/translation',
-        method: 'GET',
-        data: {
-          fullKey: key.toString()
-        },
-        success: function success(data) {
-          $('#modal-key').text(data['full_key']);
-          $('#modal-en').html(data['en']);
-          $('#modal-es').html(data['es']);
-          $('#modal-de').html(data['de']);
-          $('#modal-fr').html(data['fr']);
-          $('#modal-it').html(data['it']);
-          $('#modal-da').html(data['da']);
-          modal.show();
-        }
+      fetch(baseUrl + '/ajax/translation?fullKey=' + key.toString()).then(function (res) {
+        return res.text();
+      }).then(function (html) {
+        document.querySelector('.modal-content').innerHTML = html;
+        modal.show();
       });
     });
   });

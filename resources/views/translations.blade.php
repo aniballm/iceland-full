@@ -80,40 +80,7 @@
     <div class="modal fade" id="translationModal" tabindex="-1" aria-labelledby="modal-key" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title" id="modal-key">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>English</td>
-                                <td id="modal-en"></td>
-                            </tr>
-                            <tr>
-                                <td>Español</td>
-                                <td id="modal-es"></td>
-                            </tr>
-                            <tr>
-                                <td>Deutsch</td>
-                                <td id="modal-de"></td>
-                            </tr>
-                            <tr>
-                                <td>Français</td>
-                                <td id="modal-fr"></td>
-                            </tr>
-                            <tr>
-                                <td>Italiano</td>
-                                <td id="modal-it"></td>
-                            </tr>
-                            <tr>
-                                <td>Dansk</td>
-                                <td id="modal-da"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                @include( 'partials.modal-content' )
             </div>
         </div>
     </div>

@@ -3,24 +3,12 @@ function clickOnKey() {
         e.addEventListener('click', () => {
             let key = e.getAttribute('data-key')
 
-            $.ajax({
-                url: baseUrl + '/ajax/translation',
-                method: 'GET',
-                data: {
-                    fullKey: key.toString(),
-                },
-                success: function (data) {
-                    $('#modal-key').text(data['full_key'])
-                    $('#modal-en').html(data['en'])
-                    $('#modal-es').html(data['es'])
-                    $('#modal-de').html(data['de'])
-                    $('#modal-fr').html(data['fr'])
-                    $('#modal-it').html(data['it'])
-                    $('#modal-da').html(data['da'])
-
+            fetch( baseUrl + '/ajax/translation?fullKey=' + key.toString() )
+                .then(res => res.text())
+                .then(html => {
+                    document.querySelector('.modal-content').innerHTML = html
                     modal.show()
-                }
-            })
+                })
         })
     })
 }

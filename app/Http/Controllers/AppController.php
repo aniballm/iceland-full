@@ -47,7 +47,7 @@ class AppController extends Controller
         $key = $request->fullKey;
         $translation = Translations::getTranslation( $key );
 
-        return response()->json( $translation->toArray() );
+        return view( 'partials.modal-content', [ 'translation' => $translation ] )->render();
     }
 
     public function exportToExcel(Request $request, $group = null ) {
