@@ -9,19 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class AppController extends Controller
 {
-    /* Contantes para realizar la conexión a la API */
-    const USER  = 'candidate';
-    const PASS  = 'scandinaviantravel2023';
-    const TOKEN = '1|6QCELHY8VjScOtlvV0pKDacIX8wMWJB9vpgBocGe';
 
-    /**
-     * Método para generar la cadena de conexión a la API
-     *
-     * @return string
-     */
-    private static function conn() {
-        return 'Basic ' . base64_encode( self::USER . ':' . self::PASS ) . 'Bearer ' . self::TOKEN;
-    }
 
     public function translationsList( Request $request, $group = null ) {
         $translationsList = Translations::getTranslationsList( $group );
